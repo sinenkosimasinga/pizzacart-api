@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza cart API</title>
+
+    <!--<link rel="stylesheet" href="style.css">-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="pizza-cart-api.js"></script>
+    
+
+    <script>
+        
+    </script>
+</head>
+
+<body>
+    <div x-data="pizzaCartWithAPIWidget">
+        <div x-text="message"></div>
+
+        <h2>Pizzas you can order</h2>
+        <strong x-text="pizzas.length"></strong>
+
+        <table>
+            <template x-for="pizza in pizzas">
+                <tr>
+                    <td x-text="pizza.flavour"></td>
+                    <td x-text="pizza.size"></td>
+                    <td x-text="pizza.price"></td>
+                    <td><button>Buy</button></td>
+                </tr>
+            </template>
+        </table>
+    </div>
+    <!--<div class="header">
+            <div class="a1">
+                    <button class="btn1" x-on:click="showCart=true">
+                        <img src="images/cartpng.jpg" width="30" alt="">Shop Cart </button>
+                    <strong x-show="totalQty()>0">
+                        <div><span x-text="totalQty()"></span> Items in the Cart</div>
+                        <div>Total price: R<span x-text="cartTot().toFixed(2)"></span></div>
+                        </strong>
+            </div>
+        </div>
+
+        <div class="cart-box">
+            <div class="cart" x-show="showCart">
+                <button class="btn2" x-on:click="showCart=false">
+                    <img src="images/cartpng.jpg" width="30" alt="">Close Cart </button>
+        
+                <div>
+                    <table>
+                        <tr> <td colspan="3">
+                            <div class="aa">
+                                <h2>Cart</h2> <img src="images/cartpng.jpg" width="30" alt="">
+                            </div>
+                            </td></tr>
+                        <tr x-show="SpizzaQty>0">
+                            <td>
+                                Small Pizza
+                            </td>
+                            <td>
+                                <span x-text="SpizzaQty"></span>
+                                <button x-show="SpizzaQty>0" x-on:click="buyspizza" class="btn6">+</button>
+                                <button x-show="SpizzaQty>0" x-on:click="cancelspizza" class="btn7">-</button>
+                            </td>
+                            <td>
+                                R<span x-text="SmallPizzaTot.toFixed(2)"></span>
+                            </td>
+                        </tr>
+                        <tr x-show="mpizzaQty>0">
+                            <td>
+                                Medium Pizza
+                            </td>
+                            <td>
+                                <span x-text="mpizzaQty"></span>
+                                <button x-show="mpizzaQty>0" x-on:click="buympizza" class="btn6">+</button>
+                                <button x-show="mpizzaQty>0" x-on:click="cancelmpizza" class="btn7">-</button>
+                            </td>
+                            <td>
+                                R<span x-text="MediumPizzaTot.toFixed(2)"></span>
+                            </td>
+                        </tr>
+                        <tr x-show="lpizzaQty>0">
+                            <td>
+                                Large Pizza
+                            </td>
+                            <td>
+                                <span x-text="lpizzaQty"></span>
+                                <button x-show="lpizzaQty>0" x-on:click="buylpizza" class="btn6">+</button>
+                                <button x-show="lpizzaQty>0" x-on:click="cancellpizza" class="btn7">-</button>
+                            </td>
+                            <td>
+                                R<span x-text="LargePizzaTot.toFixed(2)"></span>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2">Total</td>
+                            <td>
+                                R<span x-text="cartTot().toFixed(2)"></span>
+                            </td>
+                        </tr>
+                        <tr x-show="totalQty()>0">
+                            <td colspan="2">
+                                <div x-show="payNow">
+                                    <div class="messege" x-text="paymentMessege">Message....</div>
+                                    <div class="b1">
+                                        <div>
+                                            <label for="">Pay Amount</label>
+                                            <input class="input" type="number" placeholder="Pay Amount" x-model="paymentAmount">
+                                        </div>
+                                        <div>
+                                            <button  x-on:click="makepayment" class="btn">
+                                                <img src="images/cartpng.jpg" width="20" alt="">PayNow</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                
+                                <td>
+                                    <button x-show="!payNow"x-on:click="payNow=true" class="btn5">
+                                        <img src="images/cartpng.jpg" width="20" alt="">Check out
+                                    </button>
+                                </td>
+                            </td>
+                        </tr>
+                    </table>
+    
+                </div>
+            </div>
+            
+        </div>-->
+    
+</body>
+</html>

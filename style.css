@@ -1,0 +1,35 @@
+.cart{
+    padding: 1em;
+    width: 100%;
+    margin-top: 2em;
+}
+table{
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+td{
+    text-align: center;
+    vertical-align: bottom;
+}
+th, td{
+    text-align: center;
+    border: 1px solid black;
+    padding: 15px;
+}
+.a1{
+    flex: 1;
+    margin: auto;
+    display: flex;
+}
+.display{
+    display: flex;
+}
+.a2{
+    margin: 1em;
+    padding: 1em;
+}
+.aa{
+    margin-left: 50%;
+    display: flex;
+}
