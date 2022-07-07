@@ -40,6 +40,7 @@ document.addEventListener('alpine:init', () => {
         pizzas: [],
         cartId:'',
         cart: {total : 0},
+        paymentMessege:'',
 
         add(pizza){
           //to be able to add pizza to the cart, I need a cart Id..
@@ -57,6 +58,36 @@ document.addEventListener('alpine:init', () => {
               })
               .catch(err=>alert(err));
             //alert(pizza.id)
+        },
+        remove(pizza){
+          // /api/pizza-cart/remove
+          const params = {
+            cart_code : this.cartId,
+            pizza_id : pizza.id
+          }
+
+          axios
+            .post('https://pizza-cart-api.herokuapp.com/api/pizza-cart/remove', params)
+            .then(()=>{
+              this.message= "pizza removed to the cart"
+              this.showCart();
+            })
+            .catch(err=>alert(err));
+
+        },
+        pay(pizza){
+          const params = {
+            cart_code : this.cartId,
+          }
+
+          axios
+            .post('https://pizza-cart-api.herokuapp.com/api/pizza-cart/pay', params)
+            .then(()=>{
+              this.paymentMessege= "paid"
+              this.showCart();
+            })
+            .catch(err=>alert(err));
+
         }
 
       }

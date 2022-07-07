@@ -42,25 +42,61 @@
             </div>
 
             <div class="cart">
-                <table>
+                <table x-show="cart.total.toFixed(2)>0">
+                    <tr> <td colspan="5">
+                        <div class="aa">
+                            <h2>Cart</h2> <img src="images/cartpng.jpg" width="30" alt="">
+                        </div>
+                        </td></tr>
                     <tr>
                         <th>Flavour</th>
-                        <!--<th>size</th>-->
+                        <th>size</th>
                         <th>Add or cancel oder</th>
                         <th>Qty</th>
                         <th>Total</th>
                     </tr>
+                    
                     <template x-for="pizza in cart.pizzas">
                         <tr>
                             <td x-text="pizza.flavour"></td>
-                            <!--<td x-text="pizza.size"></td>-->
+                            <td x-text="pizza.size"></td>
                             <td><button x-on:click="add(pizza)">+</button>
-                                <button>-</button></td>
+                                <button x-on:click="remove(pizza)">-</button></td>
                             <td x-text="pizza.qty"></td>
                             <td x-text="pizza.total.toFixed(2)"></td>
                         </tr>
 
                     </template>
+                    <tr>
+                        <td colspan="4">Total</td>
+                        <td>
+                            R<span x-text="cart.total.toFixed(2)"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div>
+                                <div class="messege" x-text="paymentMessege">Message....</div>
+                                <div class="b1">
+                                    <div>
+                                        <label for="">Pay Amount</label>
+                                        <input class="input" type="number" placeholder="Pay Amount" x-model="paymentAmount">
+                                    </div>
+                                    <div>
+                                        <button  x-on:click="pay" class="btn">
+                                            <img src="images/cartpng.jpg" width="20" alt="">PayNow</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            
+                            <td>
+                                <button x-on:click="payNow=true" class="btn5">
+                                    <img src="images/cartpng.jpg" width="20" alt="">Check out
+                                </button>
+                            </td>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>
