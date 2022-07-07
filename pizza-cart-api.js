@@ -35,12 +35,18 @@ document.addEventListener('alpine:init', () => {
             });
         },
 
+        pizzaImage(pizza){
+          return `/images/${pizza.size}.png`
+        },
+
         message: 'let eat pizza',
         username:'',
         pizzas: [],
         cartId:'',
         cart: {total : 0},
         paymentMessege:'',
+        payNow: false,
+        paymentAmount: 0,
 
         add(pizza){
           //to be able to add pizza to the cart, I need a cart Id..
@@ -83,8 +89,30 @@ document.addEventListener('alpine:init', () => {
           axios
             .post('https://pizza-cart-api.herokuapp.com/api/pizza-cart/pay', params)
             .then(()=>{
-              this.paymentMessege= "paid"
-              this.showCart();
+                if(!this.paymentAmount){
+                    this.paymentMessege = 'No amount entered!'
+                }
+                else if(this.paymentAmount >= this.cart.total.toFixed(2)){
+                    this.paymentMessege = 'paid!'
+                    setTimeout(() => {
+                        //this.payNow=false;
+                        //this.showCart=false;
+                        //this.clearCart() 
+                        this.cart.total=0
+                    }, 5000);
+    
+                }else{
+                    this.paymentMessege = 'Sorry - that is not enough money!'
+                    setTimeout(() => {
+                        //this.payNow=false;
+                        //this.showCart=false;
+                        //this.clearCart() 
+                        this.cart.total=0
+                    }, 5000);
+                }
+            
+              //this.paymentMessege= "paid"
+              //this.showCart();
             })
             .catch(err=>alert(err));
 

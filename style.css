@@ -1,7 +1,39 @@
+body{
+    background-color: lightslategray;
+}
+.body{
+    padding: 1em;
+    margin: 1em;
+}
+.intro{
+    background-color:darkcyan;
+    border-radius: 0.5em;
+    font-size: large;
+    font-weight: bold;
+}
 .cart{
     padding: 1em;
-    width: 100%;
-    margin-top: 2em;
+    width: 98%;
+    margin-top: 1em;
+    background-color: orange;
+    border-radius: 0.5em;
+}
+input{
+    
+    width: 15%;
+}
+
+.input > input[type="text"]{
+    padding: 0.5em;
+    margin: 0.5em;
+}
+.table{
+    background-color: green;
+    border-radius: 0.5em;
+}
+.messege{
+    color: red;
+    background-color: black;
 }
 table{
     border-collapse: collapse;
