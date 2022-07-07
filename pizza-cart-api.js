@@ -13,7 +13,10 @@ document.addEventListener('alpine:init', () => {
         })
         },
         message: 'let eat pizza',
-        pizzas: []
+        pizzas: [],
+        add(pizza){
+            alert(JSON.stringify(pizza))
+        }
 
       }
     });
