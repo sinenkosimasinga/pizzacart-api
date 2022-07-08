@@ -93,26 +93,19 @@ document.addEventListener('alpine:init', () => {
                     this.paymentMessege = 'No amount entered!'
                 }
                 else if(this.paymentAmount >= this.cart.total.toFixed(2)){
-                    this.paymentMessege = 'paid!'
+                    this.paymentMessege = 'payment sucessful!'
+                    this.message= this.username  +" paid!"
                     setTimeout(() => {
-                        //this.payNow=false;
-                        //this.showCart=false;
-                        //this.clearCart() 
                         this.cart.total=0
                     }, 5000);
     
                 }else{
                     this.paymentMessege = 'Sorry - that is not enough money!'
                     setTimeout(() => {
-                        //this.payNow=false;
-                        //this.showCart=false;
-                        //this.clearCart() 
                         this.cart.total=0
                     }, 5000);
                 }
             
-              //this.paymentMessege= "paid"
-              //this.showCart();
             })
             .catch(err=>alert(err));
 
