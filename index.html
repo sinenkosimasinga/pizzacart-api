@@ -95,6 +95,26 @@
                 </table>
             </div>
         </div>
+        <!-- <div class="featurePizza">
+
+        </div> -->
+        <div class="Pizzas1">
+            <template x-for="pizza in cart.pizzas">
+              <div class="Pizza2 small_Pizza ">
+                <div>
+                  <h3 x-text="pizza.flavour"></h3>
+                </div>
+                <img x-bind:src=" pizzaImage(pizza)" alt="" width="50">
+                <div x-text="pizza.size"></div>
+                <div>
+                  <h3 x-text="pizza.price"></h3>
+                </div>
+                <button x-on:click="add(pizza)">Buy</button>
+                <!-- <div x-text = "pizza.featured = true"></div> -->
+                </div>
+            </template>
+        </div>
+                
         <div class="table">
             <table>
                 <template x-for="pizza in pizzas">

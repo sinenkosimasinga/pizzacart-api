@@ -18,6 +18,16 @@ document.addEventListener('alpine:init', () => {
             this.cartId = result.data.cart_code;
           });
         },
+        featuredPizzas(){
+          //Get a list of featured pizzas
+          return axios
+              .get('https://pizza-cart-api.herokuapp.com/api/pizzas/featured')
+        },
+        postfeaturedPizzas(){
+          //Get a list of featured pizzas
+          return axios
+              .post('https://pizza-cart-api.herokuapp.com/api/pizzas/featured')
+        },
 
         createCart(){
           ///api/pizza-cart/create
@@ -42,6 +52,7 @@ document.addEventListener('alpine:init', () => {
         message: 'let eat pizza',
         username:'',
         pizzas: [],
+        featuredpizzas: [],
         cartId:'',
         cart: {total : 0},
         paymentMessege:'',
@@ -61,6 +72,17 @@ document.addEventListener('alpine:init', () => {
               .then(()=>{
                 this.message= "pizza added to the cart"
                 this.showCart();
+              })
+              .then(()=>{
+                // if (this.pizza.length<=3){
+                //   this.featuredPizzas=this.featuredPizzas();
+                //   return this.featuredPizzas;
+                // }
+                return this.featuredPizzas();
+                
+              })
+              .then(()=>{
+                return this.postfeaturedPizzas();
               })
               .catch(err=>alert(err));
             //alert(pizza.id)
