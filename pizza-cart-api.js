@@ -46,7 +46,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         pizzaImage(pizza){
-          return `/images/${pizza.size}.png`
+          return `./images/${pizza.size}.png`
         },
 
         message: 'let eat pizza',
@@ -119,6 +119,7 @@ document.addEventListener('alpine:init', () => {
                     this.message= this.username  +" paid!"
                     setTimeout(() => {
                         this.cart.total=0
+                        window.location.reload()
                     }, 5000);
     
                 }else{

@@ -22,6 +22,17 @@ input{
     
     width: 15%;
 }
+.Pizzas1{
+    display: flex;
+    margin: auto;
+    padding: 1em;
+}
+
+.Pizza2{
+    margin: 1em;
+    padding: 1em;
+    border: 8px solid black;
+}
 
 .input > input[type="text"]{
     padding: 0.5em;
