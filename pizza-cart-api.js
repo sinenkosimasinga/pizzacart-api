@@ -124,9 +124,9 @@ document.addEventListener('alpine:init', () => {
     
                 }else{
                     this.paymentMessege = 'Sorry - that is not enough money!'
-                    setTimeout(() => {
-                        this.cart.total=0
-                    }, 5000);
+                    //setTimeout(() => {
+                        //this.cart.total=0
+                    //}, 5000);
                 }
             
             })
